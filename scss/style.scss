@@ -1,0 +1,72 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+$padding: 20px;
+@mixin font_color($font, $color) {
+    font-size: $font;
+    color: $color;
+}
+
+%font_color {
+    font-size: 40px;
+    color: rgb(60, 60, 60);
+}
+
+.container {
+    background: rgb(240, 240, 240);
+    .flag-country_name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 16px;
+        padding: $padding;
+        & p {
+            font-size: 40px;
+            margin-bottom: 0px;
+        }
+        & img {
+            height: 80px;
+            margin-right: 15px;
+        }
+    }
+    .cases {
+        padding: $padding;
+        text-align: center;
+        & p {
+            margin-bottom: 0px;
+            font-weight: bold;
+            @include font_color(50px, rgb(180, 180, 180))
+        }
+    }
+    .death {
+        padding: $padding;
+        text-align: center;
+        & p {
+            margin-bottom: 0px;
+            font-weight: bold;
+            @include font_color(50px, rgb(60, 60, 60))
+        }
+    }
+    .recovered {
+        padding: $padding;
+        text-align: center;
+        & p {
+            margin-bottom: 0px;
+            font-weight: bold;
+            @include font_color(50px, rgb(20, 168, 32))
+        }
+    }
+    .header {
+        @extend %font_color;
+    }
+    .line {
+        border-top: 1px solid rgb(168, 176, 218);
+    }
+}

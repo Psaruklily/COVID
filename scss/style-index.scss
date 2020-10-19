@@ -1,0 +1,91 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+$padding: 20px;
+%font_color {
+    font-size: 40px;
+    color: rgb(60, 60, 60);
+}
+
+@mixin font_color($font, $color) {
+    font-size: $font;
+    color: $color;
+}
+
+.container {
+    background: rgb(240, 240, 240);
+    .cases {
+        padding: $padding;
+        text-align: center;
+        & p {
+            margin-bottom: 0px;
+            font-weight: bold;
+            @include font_color(50px, rgb(180, 180, 180))
+        }
+    }
+    .death {
+        padding: $padding;
+        text-align: center;
+        & p {
+            margin-bottom: 0px;
+            font-weight: bold;
+            @include font_color(50px, rgb(60, 60, 60))
+        }
+    }
+    .recovered {
+        padding: $padding;
+        text-align: center;
+        & p {
+            margin-bottom: 0px;
+            font-weight: bold;
+            @include font_color(50px, rgb(20, 168, 32))
+        }
+    }
+    .header {
+        @extend %font_color;
+    }
+}
+
+th,
+td {
+    border: 1px solid black;
+}
+
+.red-cell {
+    background: red;
+}
+
+.creamy {
+    background: rgb(242, 217, 143);
+}
+
+.hide {
+    display: none;
+}
+
+//------------------------------default-arrows
+.default-arrows {
+    cursor: pointer;
+    &:after {
+        content: url('../image/sortByDefault.png');
+    }
+}
+
+.sortToSmaller1 {
+    &:after {
+        content: url('../image/sortFromLtoS.png');
+    }
+}
+
+.sortToLarger1 {
+    &:after {
+        content: url('../image/sortFromStoL.png');
+    }
+}
